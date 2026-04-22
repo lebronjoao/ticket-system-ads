@@ -1,65 +1,76 @@
-# Gerenciamento de Tickets - ADS
+# 👟 Suporte ADS Tênis - Gestão Inteligente de Tickets
 
-Sistema de gerenciamento de tickets de suporte para loja de tênis com integração Ollama (LLM).
+Sistema moderno de gerenciamento de tickets para e-commerce, utilizando Inteligência Artificial (LLM) para análise de sentimentos, priorização automática e sugestão de respostas em tempo real.
 
-## Tecnologias
+---
 
-- **Backend:** Flask + SQLite + SQLAlchemy
-- **Frontend:** Angular 17 (Standalone Components)
-- **LLM:** Ollama (llama3:8b)
+## 🚀 Como Rodar o Projeto
 
-## Pré-requisitos
+Siga os passos abaixo para configurar e rodar o sistema localmente.
 
-1. Python 3.8+
-2. Node.js 18+
-3. Ollama instalado e rodando
+### 1. Pré-requisitos
+*   **Python 3.8+**
+*   **Node.js 18+**
+*   **Ollama** (para a parte de Inteligência Artificial)
 
-## Configuração do Backend
+---
 
-```bash
-cd backend
-pip install -r requirements.txt
-python run.py
-```
+### 2. Configuração da IA (Ollama)
+O sistema utiliza o modelo **Llama 3** para processar os tickets.
+1.  Certifique-se de que o **Ollama** está instalado e rodando no seu computador.
+2.  Abra um terminal e execute o comando abaixo para baixar e rodar o modelo:
+    ```bash
+    ollama run llama3:8b
+    ```
 
-O backend estará disponível em `http://localhost:5000`
+---
 
-**Nota:** O banco de dados SQLite será criado automaticamente na primeira execução.
+### 3. Rodando o Backend (API)
+O backend é construído em **Flask** com banco de dados **SQLite**.
+1.  Abra um terminal na pasta `backend`.
+2.  Ative o ambiente virtual:
+    *   **Windows:** `.\venv\Scripts\activate`
+    *   **Linux/Mac:** `source venv/bin/activate`
+3.  (Opcional) Instale as dependências se for a primeira vez:
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  Inicie o servidor:
+    ```bash
+    python run.py
+    ```
+*O servidor estará disponível em: `http://localhost:5000`*
 
-## Configuração do Frontend
+---
 
-```bash
-cd frontend
-npm install
-npm start
-```
+### 4. Rodando o Frontend (Interface)
+A interface é construída em **Angular 17** com design moderno.
+1.  Abra um terminal na pasta `frontend`.
+2.  (Opcional) Instale as dependências:
+    ```bash
+    npm install
+    ```
+3.  Inicie a aplicação:
+    ```bash
+    npm start
+    ```
+*A interface estará disponível em: `http://localhost:4200`*
 
-O frontend estará disponível em `http://localhost:4200`
+---
 
-## Variáveis de Ambiente (Backend)
+## 🛠️ Tecnologias Utilizadas
 
-| Variável | Padrão | Descrição |
-|----------|--------|-----------|
-| OLLAMA_BASE_URL | http://localhost:11434 | URL do Ollama |
-| OLLAMA_MODEL | llama3:8b | Modelo a ser usado |
+*   **Frontend:** Angular 17, Bootstrap 5, Bootstrap Icons.
+*   **Backend:** Python, Flask, SQLAlchemy.
+*   **Banco de Dados:** SQLite (arquivo local criado automaticamente).
+*   **IA:** Ollama API (Modelo Llama 3).
 
-## Funcionalidades
+## ✨ Funcionalidades Principais
+*   ✅ **Dashboard Inteligente:** Métricas em tempo real sobre o status dos tickets.
+*   🔍 **Busca em Tempo Real:** Filtre tickets por título, cliente ou email.
+*   🤖 **Análise com IA:** Classificação automática de prioridade e categoria via LLM.
+*   📝 **Sugestão de Resposta:** Geração automática de respostas profissionais em Português.
+*   📋 **Cópia Rápida:** Botão para copiar a resposta sugerida com um clique.
 
-- Criar, editar e excluir tickets
-- Filtrar por status e prioridade
-- Análise automática de tickets via IA (Ollama)
-- Geração de respostas sugeridas
-- Dashboard com estatísticas em tempo real
-- Banco de dados em memória (SQLite)
-
-## API Endpoints
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | /api/tickets | Lista tickets |
-| GET | /api/tickets/:id | Detalhes do ticket |
-| POST | /api/tickets | Cria ticket |
-| PUT | /api/tickets/:id | Atualiza ticket |
-| DELETE | /api/tickets/:id | Exclui ticket |
-| POST | /api/tickets/:id/analisar | Análise via IA |
-| GET | /api/stats | Estatísticas |
+---
+*Projeto desenvolvido para a disciplina de ADS.*

@@ -12,15 +12,16 @@ Analise o seguinte ticket de suporte e forneça uma análise detalhada no format
 1. "categoria": Categoria mais adequada (produto, pagamento, entrega, outro)
 2. "prioridade": Prioridade (baixa, media, alta, critica)
 3. "resumo": Resumo breve do problema em 1-2 frases
-4. "resposta_sugerida": Uma resposta profissional e útil para o cliente
+4. "resposta_sugerida": Uma resposta profissional e útil para o cliente (APENAS O TEXTO, sem objetos aninhados)
+
+IMPORTANTE: Responda sempre em Português do Brasil.
+Responda APENAS com JSON válido, sem texto adicional.
 
 Ticket:
 - Título: {titulo}
 - Descrição: {descricao}
 - Cliente: {cliente_nome}
-- Email: {cliente_email}
-
-Responda APENAS com JSON válido, sem texto adicional. Use aspas duplas para chaves e valores."""
+- Email: {cliente_email}"""
 
         try:
             response = requests.post(

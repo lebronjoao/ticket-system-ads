@@ -97,7 +97,13 @@ def analisar_ticket(id):
             if 'prioridade' in analise_data:
                 ticket.prioridade = analise_data['prioridade']
             if 'resposta_sugerida' in analise_data:
-                ticket.resposta = analise_data['resposta_sugerida']
+                suggestion = analise_data['resposta_sugerida']
+                if isinstance(suggestion, dict):
+                    # Tenta pegar o primeiro valor que for string dentro do objeto
+                    text_values = [v for v in suggestion.values() if isinstance(v, str)]
+                    ticket.resposta = text_values[0] if text_values else json.dumps(suggestion, ensure_ascii=False)
+                else:
+                    ticket.resposta = str(suggestion)
             
             db.session.commit()
             
