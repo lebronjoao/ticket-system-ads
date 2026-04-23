@@ -4,6 +4,12 @@ Sistema moderno de gerenciamento de tickets para e-commerce, utilizando Intelig�
 
 ---
 
+## Desenvolvido por:
+
+- João Antônio Santos Lima de Araújo - 2415050038
+- Luan Rodrigo Ribeiro de Souza - 2515050004
+- Melissa Gabriele de Almeida Souto - 2415050046
+
 ## 🚀 Como Rodar o Projeto
 
 Siga os passos abaixo para configurar e rodar o sistema localmente.
